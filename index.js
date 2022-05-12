@@ -18,6 +18,15 @@ for (const file of eventFiles){
 }
 
 client.commands = new Collection();
+
+// Music player stuff
+client.player = new Player(client,{
+    ytdlOptions: {
+        quality: "highestaudio",
+        highWaterMark: 1 << 25
+        }
+    })
+
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles){
