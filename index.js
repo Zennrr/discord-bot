@@ -1,12 +1,13 @@
 // Require the necessary discord.js classes
-const fs = require('node:fs');
+const fs = require("fs");
 const {Client, Collection, Intents} = require('discord.js');
 const dotenv = require("dotenv");
-const {token} = require('./config.json');
 const { Player } = require("discord-player");
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
+const Discord = require("discord.js");
 
+dotenv.config()
 const TOKEN = process.env.TOKEN
 
 const LOAD_SLASH = process.argv[2] == "load"
@@ -15,18 +16,11 @@ const CLIENT_ID = "640935639864311869"
 const GUILD_ID = "973957021307133993"
 
 // Create new client instance
-const client = new Client({ intents: [Intents.FLAGS.GUILDS , "GUILD_VOICE_STATES"]});
-
-const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
-
-for (const file of eventFiles){
-    const event = require(`./events/${file}`);
-    if(event.once){
-        client.once(event.name, (...args) => event.execute(...args));
-    } else {
-        client.on(event.name, (...args) => event.execute(...args));
-    }
-}
+const client = new Discord.Client({ 
+        intents: [
+            "GUILD_VOICE_STATES", "GUILDS"
+        ]
+    });
 
 // Music player stuff
 client.player = new Player(client,{
@@ -39,9 +33,9 @@ client.player = new Player(client,{
 client.slashcommands = new Discord.Collection
 let commands = []
 
-const slashFiles = fs.readdirSync("./commands").filter(file => file.endsWith(".js"))
+const slashFiles = fs.readdirSync("./slash").filter(file => file.endsWith(".js"))
 for (const file of slashFiles){
-    const slashcmd = require(`./commands/${file}`)
+    const slashcmd = require(`./slash/${file}`)
     client.slashcommands.set(slashcmd.data.name, slashcmd)
     if(LOAD_SLASH) commands.push(slashcmd.data.toJSON())
 }
