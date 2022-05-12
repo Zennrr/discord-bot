@@ -1,6 +1,5 @@
 # TODO Ideas
 - Custom commands maker
-- Music 
 - Radio 
 - Custom currency
 - wot themed stuff?
