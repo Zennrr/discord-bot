@@ -30,7 +30,7 @@ module.exports = {
                 new MessageEmbed()
                     .setDescription(`**Currently Playing**\n` +
                     (currentSong ? `\`[${currentSong.duration}]\` ${currentSong.title} -- <@${currentSong.requestedBy.id}>` : "None") +
-                    `\n\n**Queue\n${queueString}`
+                    `\n\n**Queue**\n${queueString}`
                     )
                     .setFooter({
                         text: `Page ${page + 1} of ${totalPages}`
