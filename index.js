@@ -2,6 +2,7 @@
 const fs = require('node:fs');
 const {Client, Collection, Intents} = require('discord.js');
 const {token} = require('./config.json');
+const { Player } = require("discord-player");
 
 // Create new client instance
 const client = new Client({ intents: [Intents.FLAGS.GUILDS , "GUILD_VOICE_STATES"]});
