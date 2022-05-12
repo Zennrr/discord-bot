@@ -22,6 +22,6 @@ module.exports = {
 
         queue.skipTo(trackNum - 1)
 
-        await interaction.editReply(`Skipped ahead to track numnber ${trackNum}`)
+        await interaction.editReply(`Skipped ahead to track number ${trackNum}`)
     },
 }
