@@ -7,4 +7,3 @@
 - word of the day
 - figure out how to host
 - figure out how to store data
-
