@@ -26,7 +26,7 @@ module.exports = {
 
         run: async({ client, interaction}) => {
             if(!interaction.member.voice.channel)
-                return interaction.editReply("YOu need to be in a VC to use this command")
+                return interaction.editReply("You need to be in a VC to use this command")
 
             const queue = await client.player.createQueue(interaction.guild)
             if(!queue.connection) await queue.connect(interaction.member.voice.channel)

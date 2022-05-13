@@ -58,7 +58,6 @@ else {
             if(!slashcmd) interaction.reply("Not a valid command")
 
             await interaction.deferReply()
-            await slashcmd.run({client, interaction})
         }
         handleCommand()
     })
