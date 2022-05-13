@@ -18,7 +18,7 @@ const GUILD_ID = "973957021307133993"
 // Create new client instance
 const client = new Discord.Client({ 
         intents: [
-            "GUILD_VOICE_STATES", "GUILDS"
+            Intents.FLAGS.GUILD_VOICE_STATES, Intents.FLAGS.GUILDS
         ]
     });
 
@@ -43,6 +43,11 @@ for (const file of slashFiles){
 if(LOAD_SLASH){
     const rest = new REST({ version: "9"}).setToken(TOKEN)
     console.log("Deploying slash commands")
+
+
+    rest.put(Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), { body: commands })
+	    .then(() => console.log('Successfully registered application commands.'))
+	    .catch(console.error);
 }
 
 else {
