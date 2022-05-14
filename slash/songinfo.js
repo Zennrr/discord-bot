@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName("info")
+        .setName("songinfo")
         .setDescription("Displays info of current song"),
     
     run: async ({client, interaction}) => {
