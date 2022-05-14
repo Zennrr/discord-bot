@@ -64,14 +64,6 @@ else {
 
             await interaction.deferReply()
             await slashcmd.run({client, interaction})
-
-            let cmdx = db.get(`${message.guild.id}`)
-
-            if(cmdx) {
-               let cmdy = cmdx.find(x => x.name === slashcmd)
-
-               if(cmdy) message.channel.send(cmdy.response)
-            }
         }
         handleCommand()
     })
