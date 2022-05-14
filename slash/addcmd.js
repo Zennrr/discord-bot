@@ -1,7 +1,6 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const { Message } = require("discord.js")
-const {QuickDB} = require("quick.db")
-const db = QuickDB()
+const db = require("quick.db")
 
 module.exports = {
 
