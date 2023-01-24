@@ -6,6 +6,7 @@ const { Player } = require("discord-player");
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const Discord = require("discord.js");
+const path = require('node:path');
 
 dotenv.config()
 const TOKEN = process.env.TOKEN
@@ -16,7 +17,7 @@ const CLIENT_ID = "640935639864311869"
 const GUILD_ID = "973957021307133993"
 
 // Create new client instance
-const client = new Discord.Client({ 
+const client = new Discord.Client({
         intents: [
             Intents.FLAGS.GUILD_VOICE_STATES, Intents.FLAGS.GUILDS
         ]
