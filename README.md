@@ -1,8 +1,4 @@
 # TODO Ideas
 - Custom commands maker
-- Radio 
-- Custom currency
-- wot themed stuff?
+- Radio
 - word of the day
-- figure out how to host - partly
-- figure out how to store data - partly

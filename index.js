@@ -1,6 +1,6 @@
 // Require the necessary discord.js classes
 const fs = require("fs");
-const {Client, Collection, Intents} = require('discord.js');
+const {Client, Collection, Intents, Events} = require('discord.js');
 const dotenv = require("dotenv");
 const { Player } = require("discord-player");
 const { REST } = require('@discordjs/rest');
